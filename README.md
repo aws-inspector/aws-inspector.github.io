@@ -1,1 +1,0 @@
-# aws-inspector.github.io
