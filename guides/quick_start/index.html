@@ -771,6 +771,8 @@
 </code></pre></div>
 <p>This command assumes an <a href="../../configuration/inventory/">inventory configuration file</a>
 named <code>inventory-config.yml</code> and a directory <code>output</code> are in the current folder.</p>
+<p>It also assume that the AWS profile specified in the config exists in
+<code>~/.aws/credentials</code>.</p>
 <p>From the inventory we can then create the diagram with:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-v<span class="w"> </span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/output/inventory.yml:/opt/aws-inspector/inventory.yml:ro<span class="w"> </span><span class="se">\</span>
@@ -778,6 +780,9 @@ named <code>inventory-config.yml</code> and a directory <code>output</code> are 
 <span class="w">  </span>ghcr.io/pasdam/aws-inspector:latest<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>diagram<span class="w"> </span>-f<span class="w"> </span>/opt/aws-inspector/inventory.yml<span class="w"> </span>-o<span class="w"> </span>/output/diagram.drawio
 </code></pre></div>
+<p>If you need to override some details about the infrastructure (ie. to clarify
+some resource names, you can edit the inventory YAML file before running the
+last command).</p>
 
 
 
