@@ -771,8 +771,9 @@
 </code></pre></div>
 <p>This command assumes an <a href="../../configuration/inventory/">inventory configuration file</a>
 named <code>inventory-config.yml</code> and a directory <code>output</code> are in the current folder.</p>
-<p>It also assume that the AWS profile specified in the config exists in
-<code>~/.aws/credentials</code>.</p>
+<p>It also assume that the
+<a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html">AWS profile</a>
+specified in the config exists in <code>~/.aws/credentials</code>.</p>
 <p>From the inventory we can then create the diagram with:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-v<span class="w"> </span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/output/inventory.yml:/opt/aws-inspector/inventory.yml:ro<span class="w"> </span><span class="se">\</span>
