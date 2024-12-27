@@ -28,4 +28,8 @@
          <loc>https://aws-inspector.github.io/guides/quick_start/</loc>
          <lastmod>2024-12-27</lastmod>
     </url>
+    <url>
+         <loc>https://aws-inspector.github.io/reference/supported_resources/</loc>
+         <lastmod>2024-12-27</lastmod>
+    </url>
 </urlset>
