@@ -465,6 +465,8 @@
       
         
       
+        
+      
     
     
       
@@ -653,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/inventory/" class="md-nav__link">
+      <a href="../../reference/configuration/inventory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -670,6 +672,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/inventory_yaml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inventory data model
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -792,8 +815,9 @@
 <span class="w">  </span>ghcr.io/pasdam/aws-inspector:latest<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>inventory<span class="w"> </span>-c<span class="w"> </span>/opt/aws-inspector/inventory-config.yml<span class="w"> </span>-o<span class="w"> </span>/output/inventory.yml
 </code></pre></div>
-<p>This command assumes an <a href="../../configuration/inventory/">inventory configuration file</a>
-named <code>inventory-config.yml</code> and a directory <code>output</code> are in the current folder.</p>
+<p>This command assumes an
+<a href="../../reference/configuration/inventory/">inventory configuration file</a> named
+<code>inventory-config.yml</code> and a directory <code>output</code> are in the current folder.</p>
 <p>It also assume that the
 <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html">AWS profile</a>
 specified in the config exists in <code>~/.aws/credentials</code>. The profile should have

@@ -2,34 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://aws-inspector.github.io/</loc>
-         <lastmod>2024-12-27</lastmod>
+         <lastmod>2024-12-31</lastmod>
     </url>
     <url>
          <loc>https://aws-inspector.github.io/commands/</loc>
-         <lastmod>2024-12-27</lastmod>
+         <lastmod>2024-12-31</lastmod>
     </url>
     <url>
          <loc>https://aws-inspector.github.io/commands/aws-inspector_diagram/</loc>
-         <lastmod>2024-12-27</lastmod>
+         <lastmod>2024-12-31</lastmod>
     </url>
     <url>
          <loc>https://aws-inspector.github.io/commands/aws-inspector_inventory/</loc>
-         <lastmod>2024-12-27</lastmod>
-    </url>
-    <url>
-         <loc>https://aws-inspector.github.io/configuration/inventory/</loc>
-         <lastmod>2024-12-27</lastmod>
+         <lastmod>2024-12-31</lastmod>
     </url>
     <url>
          <loc>https://aws-inspector.github.io/guides/installation/</loc>
-         <lastmod>2024-12-27</lastmod>
+         <lastmod>2024-12-31</lastmod>
     </url>
     <url>
          <loc>https://aws-inspector.github.io/guides/quick_start/</loc>
-         <lastmod>2024-12-27</lastmod>
+         <lastmod>2024-12-31</lastmod>
+    </url>
+    <url>
+         <loc>https://aws-inspector.github.io/reference/inventory_yaml/</loc>
+         <lastmod>2024-12-31</lastmod>
     </url>
     <url>
          <loc>https://aws-inspector.github.io/reference/supported_resources/</loc>
-         <lastmod>2024-12-27</lastmod>
+         <lastmod>2024-12-31</lastmod>
+    </url>
+    <url>
+         <loc>https://aws-inspector.github.io/reference/configuration/inventory/</loc>
+         <lastmod>2024-12-31</lastmod>
     </url>
 </urlset>
