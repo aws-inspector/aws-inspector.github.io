@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://aws-inspector.github.io/reference/configuration/inventory/">
+        <link rel="canonical" href="https://aws-inspector.github.io/reference/configuration/aws-permissions/">
       
       
-        <link rel="prev" href="../aws-permissions/">
+        <link rel="prev" href="../../../commands/aws-inspector_inventory/">
       
       
-        <link rel="next" href="../../inventory_yaml/">
+        <link rel="next" href="../inventory/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Inventory config - aws-inspector</title>
+        <title>AWS permissions - aws-inspector</title>
       
     
     
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Inventory config
+              AWS permissions
             
           </span>
         </div>
@@ -600,28 +600,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../aws-permissions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AWS permissions
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -638,13 +616,35 @@
         
   
   <span class="md-ellipsis">
-    Inventory config
+    AWS permissions
     
   </span>
   
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inventory config
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -744,34 +744,37 @@
 
 
 <h1 id="inventory-configuration">Inventory configuration</h1>
-<p>This is the structure of the configuration to use for the
-<a href="../../../commands/aws-inspector_inventory/">inventory</a> command:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">awsAccounts</span><span class="p">:</span>
-<span class="w">  </span><span class="c1"># Add here an entry for each account you want to inspect</span>
-<span class="w">  </span><span class="p p-Indicator">-</span>
-<span class="w">    </span><span class="c1"># Profile name to access the resources in the account</span>
-<span class="w">    </span><span class="nt">profile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some-profile</span>
-<span class="w">    </span><span class="nt">regions</span><span class="p">:</span>
-<span class="w">      </span><span class="c1"># List of regions to inspect</span>
-<span class="w">      </span><span class="p p-Indicator">-</span>
-<span class="w">        </span><span class="c1"># Name of the region to inspect</span>
-<span class="w">        </span><span class="nt">regionName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">us-east-1</span>
-<span class="w">        </span><span class="nt">services</span><span class="p">:</span>
-<span class="w">          </span><span class="c1"># Enable/Disable Elasticcache inspection</span>
-<span class="w">          </span><span class="nt">elasticacheEnabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">          </span><span class="c1"># Enable/Disable ELBs inspection</span>
-<span class="w">          </span><span class="nt">elbEnabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">          </span><span class="c1"># Enable/Disable MSK inspection</span>
-<span class="w">          </span><span class="nt">mskEnabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">          </span><span class="c1"># Enable/Disable ElasticSearch/OpenSearch inspection</span>
-<span class="w">          </span><span class="nt">openSearchEnabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">          </span><span class="c1"># Enable/Disable RDS inspection</span>
-<span class="w">          </span><span class="nt">rdsEnabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">          </span><span class="c1"># Enable/Disable Transit Gateway inspection</span>
-<span class="w">          </span><span class="nt">transitGatewayEnabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="nt">output</span><span class="p">:</span>
-<span class="w">  </span><span class="c1"># path of the yaml file</span>
-<span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inventory.yaml</span>
+<p>The following is the minimum required policy to attach to the AWS profile used
+to generate the <a href="../../../commands/aws-inspector_inventory/">inventory</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Sid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VisualEditor1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeInstances&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;kafka:ListClusters&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeTransitGateways&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeNatGateways&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeInternetGateways&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;elasticloadbalancing:DescribeLoadBalancers&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;es:ListDomainNames&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeTransitGatewayAttachments&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeAvailabilityZones&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeVpcs&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;elasticache:DescribeCacheSubnetGroups&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;rds:DescribeDBInstances&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;es:DescribeDomains&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeTransitGatewayVpcAttachments&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeSubnets&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;elasticache:DescribeCacheClusters&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;rds:DescribeDBClusters&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
 </code></pre></div>
 
 
